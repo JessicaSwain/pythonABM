@@ -1,9 +1,19 @@
-import random
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 23 11:56:50 2018
+
+@author: gy15js
+"""
+
+'''NEED TO COMMENT OUT THIS SECTION OF CODE'''
+
+
+import random as r
 
 class Agent():
         def __init__ (self, environment, agents, r_seed):
-            self._y = random.randint(0,99)
-            self._x = random.randint(0,99)
+            self._y = r.randint(0,99)
+            self._x = r.randint(0,99)
         #def __init__(environment): added the two together to ensure use of 
         #init
             self.environment = environment
@@ -14,18 +24,18 @@ class Agent():
             self.store = 0
 
         def move(self):
-            if random.random() < 0.5:
+            if r.random() < 0.5:
                 self._y = (self._y + 1) % 100
             else:
                 self._y = (self._y - 1) % 100
 
-            if random.random() < 0.5:
+            if r.random() < 0.5:
                 self._x = (self._x + 1) % 100
             else:
                 self._x = (self._x - 1) % 100
                 
         def eat(self): #can you make it eat what is left?
-            if self.environment[self._y][self._x] > 10:
+            if  self.environment[self._y][self._x] > 10:
                 self.environment[self._y][self._x] -= 10
                 self.store += 10
          
